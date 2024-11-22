@@ -1,0 +1,12 @@
+services:
+  homeassistant:
+    container_name: homeassistant-test-for-transportation
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./config/configuration.yaml:/config/configuration.yaml
+      - ../custom_components/transportation:/config/custom_components/transportation
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - 8123:8123
