@@ -9,4 +9,4 @@ services:
     environment:
       - TZ=Asia/Seoul
     ports:
-      - 8123:8123
+      - "8123:8123"
