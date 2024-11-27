@@ -11,8 +11,12 @@ from homeassistant.helpers import (
 )
 
 from custom_components.transportation.consts.defaults import DOMAIN, PLATFORMS
+from custom_components.transportation.core.di import Container
 
 _LOGGER = logging.getLogger(__name__)
+
+container = Container()
+container.wire(modules=[__name__])
 
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:

@@ -1,3 +1,29 @@
 {
-
+  "title": "Transportation All-in-One",
+  "config": {
+    "flow_title": "Setup Transportation",
+    "step": {
+      "user": {
+        "title": "Select country and service.",
+        "description": "",
+        "data": {
+          "country_input": "Country"
+        }
+      },
+      "setup": {
+        "title": "{title}",
+        "description": "{description}",
+        "data": {
+        }
+      }
+    },
+    "error": {
+      "base": "Unknown error occurred.",
+      "unknown": "Unknown error occurred.",
+      "no_search_results": "No search results found."
+    },
+    "abort": {
+      "already_configured": "Already configured."
+    }
+  }
 }
