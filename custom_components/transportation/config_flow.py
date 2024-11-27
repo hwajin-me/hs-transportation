@@ -70,9 +70,9 @@ class TransportationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 **schema,
                 **{
                     voluptuous.Required(
-                        schema=CONF_SETUP_COUNTRY_INPUT,
-                        msg="Please select a country",
-                        default=input_form.get(CONF_SETUP_COUNTRY_INPUT, None)
+                        schema=CONF_SETUP_SERVICE_INPUT,
+                        msg="Please select a service for the country.",
+                        default=input_form.get(CONF_SETUP_SERVICE_INPUT, None)
                     ): voluptuous.In(Lu.map(country_list(), lambda country: {
                         country: country_name(country)
                     }))
@@ -85,9 +85,10 @@ class TransportationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             )
 
         # Step - Go to setup
-        pass
+        return self.async_step_service_setup()
 
     async def async_step_service_setup(self):
+
         pass
 
 
